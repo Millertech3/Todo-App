@@ -9,12 +9,13 @@ function App() {
 		setTodos(newTodoList);
 		persisitData(newTodoList)
 	}
+	
 	function handleDeleteTodo(index) {
 		const newTodoList = todos.filter((todo, todoidx) => {
 			return todoidx !== index;
 		});
-		setTodos(newTodos);
-		persisitData(newTodoList)
+		setTodos(newTodoList); // Fix the typo here
+		persistData(newTodoList); // Also, fix the typo here
 	}
 	function persisitData(newList) {
 		localStorage.setItem('todos', JSON.stringify({todos: newList }))
